@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<title>Linking pages by shifa</title>
+		<style>
+			*{font-size:40px; font-family:Times New Roman;}
+			body{background-color: peachpuff;}
+			.nav {background-color: maroon;}
+			.nav a {color: peachpuff; margin:300px; text-decoration: none;}
+			h1{color:maroon;}
+			input[type=submit]{background-color:peachpuff;color:maroon;}
+			input[type=number]{color:maroon;}
+		</style>
+	</head>
+
+	<body>
+	<center>
+		<div class="nav">
+			<a href="index.html"> Home </a>
+			<a href="aboutus.html"> About Us </a>
+		</div>
+
+		<h1> ~ EVEN ODD FINDER ~ </h1>
+
+		<form onsubmit="check()">
+			<input type="number"	id="num"	placeholder="Enter the Number" />
+			<br/><br/>
+			<input type="submit" />
+		</form>
+		<h1 id="msg" />
+
+		<script>
+			function check()
+			{
+				event.preventDefault();
+				let num= document.getElementById("num");
+				let msg= document.getElementById("msg");
+	
+				if(num.value==="")
+				{
+					alert("please enter a number");
+					msg.innerHTML="";
+					num.focus();
+					return;
+				}
+		
+				let n=parseInt(num.value);
+				let r= n%2===0 ? "Even" : "Odd";
+				msg.innerHTML="The number " + n + " is an " + r + " number.";
+			}
+		</script>
+	</center>
+	</body>
+
+</html>
